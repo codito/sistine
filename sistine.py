@@ -6,7 +6,7 @@ Mod by Arun
 
 A feint, within a feint, within a feint
 
-Last Modified: Thu 02 Oct 2008 02:29:14 PM IST
+Last Modified: Sat 01 Nov 2008 12:54:38 AM IST
 '''
 
 import sys
@@ -15,7 +15,7 @@ import re
 import os
 import subprocess as sp
 import socket,struct
-import md5
+import hashlib
 import xml.dom.minidom
 from xml.dom.minidom import Node
 
@@ -142,7 +142,7 @@ def calculateBlowfishKeyAlpha(sessionID):
     global gPvtIP
     netString=getNetAddress(gPvtIP)
     srcKey=gConstKey+netString+sessionID
-    m = md5.new(srcKey)
+    m = hashlib.md5(srcKey)
     bfKey = m.hexdigest()
     return bfKey
 
@@ -183,7 +183,7 @@ def calculateBlowfishKeyBeta(sessionID,serverTime):
     global gPvtIP
     tstamp=genTimestamp(serverTime)
     txtKey=gConstKey+tstamp+getNetAddress(gPvtIP)+sessionID
-    m = md5.new(txtKey)
+    m = hashlib.md5(txtKey)
     bfKey = m.hexdigest()
     return bfKey
 
