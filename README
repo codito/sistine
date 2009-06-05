@@ -1,0 +1,49 @@
+ReadMe for Sistine | Sify connection client
+Last Modified: Sat 01 Nov 2008 12:59:25 AM IST
+-------------------------
+
+Requirements
+---
+1. GNU C Compiler or any equivalent
+2. Python > 2.5
+
+Install
+---
+1. Compile the modBlowfish
+    - gcc blowfish.c modBlowfish.c -o modBlowfish
+2. Make sistine.py executable
+    - chmod +x sistine.py
+3. [Optional] Put sistine.py in path
+    - Make sure modBlowfish executable is present in the same dir
+4. [Optional] Make a rc.d script
+    - DIY
+
+Usage
+---
+1. sistine.py in
+    - Will connect your box to the sify network
+2. sistine.py out
+    - Will disconnect your internet connection
+
+Issues
+---
+1. Setup your DNS entries manually
+    - sudo vim /etc/resolv.conf
+    - Add sify nameservers (you can get them from a online search).
+    - Here are the OpenDNS nameservers:
+	nameserver 208.67.222.222
+	nameserver 208.67.220.220
+2. Connection might fail if you're using a password with special
+chars (!@#$%...) Please help debug this issue if you're a python
+guy.
+
+License
+---
+1. Public domain. Modify as you like.
+2. I am not responsible if this script makes your box burst/fly/walk. Use
+at your own risk. It works for me btw :)
+
+
+Credits
+---
+Kudos to Liet-Kynes. Buddy, you're a true hacker :)
